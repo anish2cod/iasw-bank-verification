@@ -1,0 +1,51 @@
+# IASW Backend Dependencies
+# Install into conda environment: conda activate iasw && pip install -r requirements.txt
+
+# Web Framework
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+
+# Database
+sqlalchemy>=2.0.0
+
+# Validation
+pydantic>=2.0.0
+
+# File uploads
+python-multipart>=0.0.6
+aiofiles>=23.2.0
+
+# LangGraph & LangChain
+langgraph>=1.0.0
+langchain>=1.0.0
+langchain-community>=0.4.0
+
+# LLM Providers (free tier)
+# Primary: Gemini Vision + Text (handles OCR + LLM in one API call)
+google-genai>=1.0.0          # New SDK — replaces deprecated google-generativeai
+# Optional: Groq cloud — LLaMA 3.3 70B free tier (set GROQ_API_KEY to enable)
+groq>=0.8.0
+# Optional: local Ollama (fallback; not primary)
+ollama>=0.1.0
+
+# OCR (Tesseract used as fallback when OCR_PROVIDER=tesseract)
+# Requires: sudo apt install tesseract-ocr poppler-utils
+pytesseract>=0.3.10
+pdf2image>=1.16.0
+Pillow>=10.0.0               # Also used for ELA (Error Level Analysis) forgery detection
+
+# QR / barcode detection (optional — graceful fallback if libzbar0 not installed)
+# Requires: sudo apt install libzbar0
+pyzbar>=0.1.9
+
+# String matching for name comparison
+python-Levenshtein>=0.23.0
+rapidfuzz>=3.6.0             # Preferred; falls back to Levenshtein if unavailable
+
+# PDF generation (for mock marriage certificate samples)
+reportlab>=4.0.0
+
+# Testing
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+httpx>=0.26.0

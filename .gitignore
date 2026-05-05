@@ -1,0 +1,62 @@
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Virtual environments ───────────────────────────────────────
+venv/
+.venv/
+env/
+# Conda envs are stored in miniconda3/, not here — nothing to exclude
+
+# ── Secrets & environment files ────────────────────────────────
+.env
+.env.local
+.env.*.local
+# Never commit API keys — set them via: conda env config vars set GEMINI_API_KEY=...
+
+# ── Database ───────────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ── Uploaded documents (may contain PII) ──────────────────────
+data/uploads/*/
+# Keep the directory itself via .gitkeep
+!data/uploads/.gitkeep
+
+# ── Audit logs (contain sensitive operational data) ────────────
+logs/*.jsonl
+logs/*.log
+# Keep the directory via .gitkeep
+!logs/.gitkeep
+
+# ── Node.js / Next.js ─────────────────────────────────────────
+frontend/node_modules/
+frontend/.next/
+frontend/.cache/
+frontend/tsconfig.tsbuildinfo
+frontend/.env.local
+
+# ── IDE & OS ──────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Claude Code settings (local only) ─────────────────────────
+.claude/
+
+# ── Assessment source document (not part of the codebase) ──────
+data/*.docx
+data/*.pdf
